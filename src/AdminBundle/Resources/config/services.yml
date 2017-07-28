@@ -1,0 +1,8 @@
+services:
+#    admin.example:
+#        class: AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+     image_checker:
+        class: AdminBundle\ImageUtil\CheckImage
+        arguments:
+            - "%image_type_list%"

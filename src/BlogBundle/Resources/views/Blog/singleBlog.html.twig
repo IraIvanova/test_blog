@@ -1,0 +1,27 @@
+{% extends '@Blog/base.html.twig' %}
+
+{% block body %}
+
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h1>{{ blog.title }}</h1>
+                    <img src="/images/{{blog.image }}" style="width: 600px" ><br/>
+                    <div>{{ blog.description }}</div>
+                </div>
+
+            </div>
+            <div style="margin-top: 50px">
+                <a class="pager" href="{{ path('blog_homepage') }}">Back to all Posts</a>
+            </div>
+        </div>
+
+    </article>
+
+    <hr>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends '@Admin/base.html.twig' %}
+{% block body %}
+
+
+    <div></div>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Control</th>
+                    </tr>
+                    {% for blog in blogs %}
+                        <tr>
+                            <td>{{ blog.id }}</td>
+                            <td><a href="{{ path('blog_admin.single', {id:blog.id }) }}">{{ blog.title }}</a></td>
+
+                            <td>{{ blog.getCategory().getName() }}</td>
+                            <td>
+                                <a class="btn btn-info" href="{{ path('blog_admin.edit', {id:blog.id}) }}">Edit</a>
+                                <a class="btn btn-danger" href="{{ path('blog_admin.remove', {id:blog.id}) }}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+<div>
+                    {{ knp_pagination_render(blogs) }}
+</div>
+                <a  style="margin-bottom: 20px" class="btn btn-info" href="{{ path('blog_admin.create') }}">Create new post</a>
+<br>
+                <a class="btn btn-success" href="{{ path('category.list') }}">Category list</a>
+                {#<a class="btn btn-info" href="{{ path('blog_admin.create') }}">Create new category</a>#}
+            </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}

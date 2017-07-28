@@ -1,0 +1,26 @@
+{% extends '@Admin/base.html.twig' %}
+{% block body %}
+
+    <div class="container">
+        <h2>Category list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Control</th>
+            </tr>
+    {% for category in categories %}
+       <tr>
+           <td>{{ category.id }}</td>
+           <td> {{category.name }}</td>
+           <td>
+                <a class="btn btn-info" href="{{ path("category.edit",{id:category.id}) }}">Edit</a>
+                <a class="btn btn-danger" href="{{ path("category.remove",{id:category.id}) }}">Delete</a>
+           </td>
+       </tr>
+    {% endfor %}
+        </table>
+        <a  class="btn btn-info" href="{{ path("category.create") }}">Create category</a>
+    </div>
+{% endblock %}
+

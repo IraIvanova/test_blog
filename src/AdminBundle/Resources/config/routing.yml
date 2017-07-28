@@ -1,0 +1,61 @@
+blog_admin.homepage:
+    path:     /blog/{page}
+    defaults: { _controller: AdminBundle:Blog:index,  page: 1}
+    requirements:
+        page: \d+
+        perPage: \d+
+
+blog_admin.create:
+    path: /blog/create
+    defaults: { _controller: AdminBundle:Blog:addBlog }
+
+blog_admin.edit:
+     path: /blog/{id}/edit
+     defaults: { _controller: AdminBundle:Blog:editBlog }
+     requirements:
+        id: \d+
+
+blog_admin.remove:
+     path: /blog/{id}/remove
+     defaults: { _controller: AdminBundle:Blog:removeBlog }
+     requirements:
+        id: \d+
+
+blog_admin.single:
+    path: /blog/{id}/single
+    defaults: { _controller: AdminBundle:Blog:singleBlog}
+    requirements:
+        id: \d+
+
+category.create:
+    path: /blog/category/create
+    defaults: { _controller: AdminBundle:Category:add }
+
+category.edit:
+    path: /blog/category/{id}/edit
+    defaults: { _controller: AdminBundle:Category:edit }
+    requirements:
+        id: \d+
+
+category.remove:
+    path: /blog/category/{id}/remove
+    defaults: { _controller: AdminBundle:Category:remove }
+    requirements:
+        id: \d+
+
+category.list:
+    path: /blog/category/list
+    defaults: { _controller: AdminBundle:Category:list }
+
+login:
+    path:   /login
+    defaults: { _controller: AdminBundle:Login:login }
+
+admin_registration:
+    path: /registration
+    defaults: { _controller: AdminBundle:User:registration }
+
+admin_search:
+    path: /search
+    defaults: { _controller: AdminBundle:Blog:search }
+    methods: [GET]

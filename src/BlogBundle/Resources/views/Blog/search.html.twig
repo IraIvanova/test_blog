@@ -1,0 +1,16 @@
+{% extends '@Blog/base.html.twig' %}
+{% block body %}
+
+<div class="container">
+    <h2>Blogs  on your request:</h2>
+    {% for blog in blogs %}
+       <div>
+          <a href="{{ path('blog.single', {id:blog.id}) }}"><h2>{{blog.title}}</h2></a>
+       </div>
+        <div>
+            {{ blog.description| slice(0, 100) }}
+        </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

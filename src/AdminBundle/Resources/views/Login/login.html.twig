@@ -1,0 +1,14 @@
+{% extends '@Admin/base.html.twig' %}
+
+{% block body %}
+<form action="{{ path('login') }}" method="post">
+
+    Username:
+    <input name="_username" value="" type="text">
+
+    Password:
+    <input name="_password" type="password">
+
+    <button type="submit">LOGIN</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+blog_homepage:
+    path:     /{page}
+    defaults: { _controller: BlogBundle:Default:index, page: 1 }
+
+blog.single:
+    path: /blog/{id}/single
+    defaults: { _controller: BlogBundle:Default:singleBlog}
+    requirements:
+        id: \d+
+
+blog_search:
+    path: /blog/search
+    defaults: { _controller: BlogBundle:Default:search }
+    methods: [GET]

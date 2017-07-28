@@ -1,0 +1,16 @@
+{% block body %}
+    <fieldset>
+        <h2>Войти:</h2>
+
+        <form method="post" action="{{ path('login') }}" >
+
+            Email:
+            <input name="_username" value="" type="text"><br>
+            Пароль:
+            <input name="_password" type="password"><br>
+            <button type="submit">Войти</button>
+
+
+        </form>
+    </fieldset>
+{% endblock %}

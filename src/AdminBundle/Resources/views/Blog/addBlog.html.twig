@@ -1,0 +1,8 @@
+{% extends '@Admin/base.html.twig' %}
+
+{% block body %}
+    <form method="post" action="{{ path('blog_admin.create') }}" enctype="multipart/form-data">
+        {{ form_widget(form) }}
+        <input type="submit" />
+    </form>
+{% endblock %}
